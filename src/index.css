@@ -14,9 +14,9 @@
   --text-muted: #5c5c5c;
   --text-placeholder: #9a9a9a;
 
-  --primary: #9fa8da;
-  --primary-hover: #8b96ce;
-  --primary-soft: rgba(159, 168, 218, 0.2);
+  --primary: #5c6bc0;
+  --primary-hover: #4a5ab5;
+  --primary-soft: rgba(92, 107, 192, 0.25);
 
   --priority-haute: #e8b4b8;
   --priority-haute-text: #8b4549;
@@ -28,9 +28,9 @@
   --favorite: #f0e8a8;
   --favorite-hover: #e8dc90;
 
-  --danger: #e8a0a0;
-  --danger-hover: #d88a8a;
-  --danger-soft: rgba(200, 100, 100, 0.12);
+  --danger: #c62828;
+  --danger-hover: #b71c1c;
+  --danger-soft: rgba(198, 40, 40, 0.2);
 
   /* UI */
   --radius: 12px;
@@ -85,4 +85,14 @@ button {
 
 input, select {
   font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

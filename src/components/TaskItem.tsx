@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { memo, useState, type FormEvent } from 'react';
 import type { Task, PriorityLevel } from '../types/task.ts';
 import { PrioritySelect } from './PrioritySelect.tsx';
 
@@ -11,7 +11,7 @@ interface TaskItemProps {
   onDelete: (id: string) => void;
 }
 
-export function TaskItem({
+function TaskItemComponent({
   task,
   priorities,
   onToggleComplete,
@@ -153,3 +153,5 @@ function getContrastColor(hex: string): string {
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance > 0.6 ? '#2c2c2c' : '#fff';
 }
+
+export const TaskItem = memo(TaskItemComponent);

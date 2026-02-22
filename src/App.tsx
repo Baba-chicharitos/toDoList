@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { TaskForm } from './components/TaskForm.tsx';
 import { TaskList } from './components/TaskList.tsx';
 import { Filters } from './components/Filters.tsx';
@@ -121,17 +121,21 @@ function App() {
     setPriorities(next);
   }, []);
 
-  const filtered = filterAndSearch(
-    tasks,
-    filterStatus,
-    onlyFavorites,
-    searchQuery
+  const filtered = useMemo(
+    () => filterAndSearch(tasks, filterStatus, onlyFavorites, searchQuery),
+    [tasks, filterStatus, onlyFavorites, searchQuery]
   );
-  const sorted = sortTasks(filtered, priorities);
-  const taskCountByPriorityId = countTasksByPriorityId(tasks);
+  const sorted = useMemo(
+    () => sortTasks(filtered, priorities),
+    [filtered, priorities]
+  );
+  const taskCountByPriorityId = useMemo(
+    () => countTasksByPriorityId(tasks),
+    [tasks]
+  );
 
   return (
-    <div className="app">
+    <main className="app">
       <header className="app-header">
         <h1>To-Do List</h1>
       </header>
@@ -158,7 +162,7 @@ function App() {
         onEdit={editTask}
         onDelete={deleteTask}
       />
-    </div>
+    </main>
   );
 }
 
