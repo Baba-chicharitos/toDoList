@@ -1,0 +1,88 @@
+/* ============================================
+   Base pastel – mobile-first
+   ============================================ */
+
+:root {
+  /* Palette pastel */
+  --bg-main: #f5f1f7;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --border: rgba(44, 44, 44, 0.12);
+  --border-focus: rgba(140, 120, 180, 0.5);
+
+  --text: #2c2c2c;
+  --text-muted: #5c5c5c;
+  --text-placeholder: #9a9a9a;
+
+  --primary: #9fa8da;
+  --primary-hover: #8b96ce;
+  --primary-soft: rgba(159, 168, 218, 0.2);
+
+  --priority-haute: #e8b4b8;
+  --priority-haute-text: #8b4549;
+  --priority-moyenne: #f0d4b0;
+  --priority-moyenne-text: #8b6b3a;
+  --priority-basse: #b8e0c8;
+  --priority-basse-text: #3d6b4f;
+
+  --favorite: #f0e8a8;
+  --favorite-hover: #e8dc90;
+
+  --danger: #e8a0a0;
+  --danger-hover: #d88a8a;
+  --danger-soft: rgba(200, 100, 100, 0.12);
+
+  /* UI */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 12px rgba(44, 44, 44, 0.06);
+  --shadow-hover: 0 4px 20px rgba(44, 44, 44, 0.08);
+  --glass: rgba(255, 255, 255, 0.75);
+  --transition: 180ms ease;
+  --transition-fast: 150ms ease;
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--bg-main);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select {
+  font-family: inherit;
+}
